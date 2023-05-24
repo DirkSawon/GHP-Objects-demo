@@ -7,7 +7,7 @@ const dataObj = JSON.parse(contentJSON);
 
 Object.entries(dataObj).forEach((entryCards) => {
     // step 1
-    console.log(entryCards);
+    // console.log(entryCards);
     const sections = [
         document.querySelector("#outdoor"), 
         document.querySelector("#nature"),
@@ -17,14 +17,14 @@ Object.entries(dataObj).forEach((entryCards) => {
         document.querySelector("#road")
     ];
     // step 2
-    console.log(sections);
+    // console.log(sections);
     entryCards[1].map(card => {
-        console.log(card);
+        //console.log(card);
         sections.forEach(section => {
             if(card.type === section.id) {
                 let cardInfo = `
                     <div class="card m-3">
-                        <img src=${card.image} class="card-img-top" alt=${card.title} height="auto" width="auto"/>
+                        <img src=${card.image} class="card-img-top" alt=${card.title} height="auto" width="640px"/>
                         <div class="card-body">
                             <h4>${card.title}</h4>
                             <h6>${card.author}</h6>
