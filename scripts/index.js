@@ -5,17 +5,52 @@ const dataObj = JSON.parse(contentJSON);
 // console.log(dataObj);
 // console.log(Object.entries(dataObj));
 
+const sections = [
+    document.querySelector("#s1"), 
+    document.querySelector("#s2"),
+    document.querySelector("#s3"),
+    document.querySelector("#s4"), 
+    document.querySelector("#s5"),
+    document.querySelector("#s6")
+];
+
+function toggleVis(string) {
+    if(string === "hide") {
+        sections.forEach(x => x.setAttribute("hidden", ""));
+    }
+    else if (string === "show") {
+        sections.forEach(x => x.removeAttribute("hidden"));
+    }
+}
+
+toggleVis("hide");
+//toggleVis("show");
+const headings = document.getElementsByClassName('mt-1');
+
+for(let i = 0; i < headings.length; i++) {
+    headings[i].addEventListener('click', () => {
+        let toggle = false;
+                
+            if (sections[i].hasAttribute("hidden") === false) {
+                //for(let j = 0; j < sections.length; j++) {    
+                    sections[i].setAttribute("hidden", "");
+                //}
+            }
+
+            else if (sections[i].hasAttribute("hidden") === true) {
+                //for(let j = 0; j < sections.length; j++) {
+                    sections[i].removeAttribute("hidden");
+                //}
+            }
+        });
+}
+    
+            
+
 Object.entries(dataObj).forEach((entryCards) => {
     // step 1
     // console.log(entryCards);
-    const sections = [
-        document.querySelector("#outdoor"), 
-        document.querySelector("#nature"),
-        document.querySelector("#plant"),
-        document.querySelector("#tree"), 
-        document.querySelector("#mountain"),
-        document.querySelector("#road")
-    ];
+    
     // step 2
     // console.log(sections);
     entryCards[1].map(card => {
@@ -40,6 +75,9 @@ Object.entries(dataObj).forEach((entryCards) => {
     });
     
 });
+
+//toggleVis("hide");
+//toggleVis("show");
 
 // Object.keys(obj); // Schlüssel 
 // Object.values(obj); // Schlüsselwerte

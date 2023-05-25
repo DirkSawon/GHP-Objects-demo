@@ -1,15 +1,15 @@
 const content = {
-    s1: [{
-        type: "s1",
-        author: "Location: Rocky Mountains",
-        title: "Exclusive Trip to the Rockys",
-        description: "Description: You like to visit the lakes and mountains of Norther America.",
+    outdoor: [{
+        type: "outdoor",
+        author: "Author: James Wheeler",
+        title: "Mountain reflection on body of water",
+        description: "Description: There is something about a huge mountain reflection in a lake that just puts you at ease. Here is another picture from my trip to the Canadian Rockies. Lake Minnewanka at Sunrise.",
         categories: ["Scenic", "Hd Blue Wallpapers", "Rocky Mountain", "Scene", "Hd Sky Wallpapers", "..."],
         image: "./images/james-wheeler-ZOA-cqKuJAA-unsplash.jpg"
     }
     ],
-    s2: [{
-        type: "s2",
+    nature: [{
+        type: "nature",
         author: "Author: Robert Lukeman",
         title: "green grass field during sunset",
         description: "Description: no description available",
@@ -17,8 +17,8 @@ const content = {
         image: "./images/robert-lukeman-_RBcxo9AU-U-unsplash.jpg"
     }
     ],
-    s3: [{
-        type: "s3",
+    plant: [{
+        type: "plant",
         author: "Author: Pawel Czerwinski",
         title: "green leafed plant clip art",
         description: "Description: I took the shot at home with Sigma 105 mm.",
@@ -26,8 +26,8 @@ const content = {
         image: "./images/pawel-czerwinski-lWBZ01XRRoI-unsplash.jpg"
     }
     ],
-    s4: [{
-        type: "s4",
+    tree: [{
+        type: "tree",
         author: "Author: Jan Huber",
         title: "green-leafed tree at daytime",
         description: "Description: Tree in backlight",
@@ -35,8 +35,8 @@ const content = {
         image: "./images/jan-huber-4OhFZSAT3sw-unsplash.jpg"
     }
     ],
-    s5: [{
-        type: "s5",
+    mountain: [{
+        type: "mountain",
         author: "Author: Benjamin Voros",
         title: "snow mountains under stars",
         description: "Description: no description available",
@@ -44,8 +44,8 @@ const content = {
         image: "./images/benjamin-voros-phIFdC6lA4E-unsplash.jpg"
     }
     ],
-    s6: [{
-        type: "s6",
+    road: [{
+        type: "road",
         author: "Author: Diego Jimenez",
         title: "lone road going to mountains",
         description: "Description: To you use this picture, link the source to my website https://diego.cool – thank you!",
