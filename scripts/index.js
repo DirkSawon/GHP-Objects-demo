@@ -91,7 +91,7 @@ console.log(cards);
 for(let i = 0; i < headings.length; i++) {
     headings[i].addEventListener('click', () => {
         let toggle = false;        
-            console.log(cards[i].getAttribute("class"));
+            //console.log(cards[i].getAttribute("class"));
             if(cards[i].getAttribute("class").includes("visually-hidden") === false) {
                 //if (sections[i].getAttribute("class").includes("visually-hidden") === false) {
                     cardsClassNames = cards[i].getAttribute("class");
