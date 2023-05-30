@@ -14,6 +14,8 @@ const sections = [
     document.querySelector("#s6")
 ];
 
+
+/* 
 function toggleVis(string) {
     if(string === "hide") {
         sections.forEach(x => x.setAttribute("hidden", ""));
@@ -23,23 +25,54 @@ function toggleVis(string) {
     }
 }
 
-toggleVis("hide");
+toggleVis("hide"); */
 //toggleVis("show");
 const headings = document.getElementsByClassName('mt-1');
 
+for (let i = 0; i < headings.length; i++) {
+    headings[i].style.cursor = "pointer";
+    headings[i].style.width = "200px";
+    //headings[i].style.marginRight = "100px";
+}
+
+let sectionsClassNames = "";
+
+for (let i = 0; i < sections.length; i++) {
+    //sections[i].style.display = "none";
+    sectionsClassNames = sections[i].getAttribute("class");
+    sectionsClassNames += " visually-hidden";
+    //console.log(sectionsClassNames);
+    sections[i].setAttribute("class", sectionsClassNames);
+}
+
 for(let i = 0; i < headings.length; i++) {
     headings[i].addEventListener('click', () => {
-        let toggle = false;
+        let toggle = false;        
                 
-            if (sections[i].hasAttribute("hidden") === false) {
+            if (sections[i].getAttribute("class").includes("visually-hidden") === false) {
+            //if (sections[i].style.display === "none") {
+                //sections[i].style.display = "flex";
                 //for(let j = 0; j < sections.length; j++) {    
-                    sections[i].setAttribute("hidden", "");
+                    //sections[i].setAttribute("hidden", "");
+                    sectionsClassNames = sections[i].getAttribute("class");
+                    sectionsClassNames += " visually-hidden";
+                    //console.log(sectionsClassNames);
+                    sections[i].setAttribute("class", sectionsClassNames);
+                    //sectionsClassNames = "";
+
                 //}
             }
 
-            else if (sections[i].hasAttribute("hidden") === true) {
+            else if (sections[i].getAttribute("class").includes("visually-hidden") === true) {
+            //else if (sections[i].style.display === "flex") {
+                //sections[i].style.display = "none";
                 //for(let j = 0; j < sections.length; j++) {
-                    sections[i].removeAttribute("hidden");
+                    //sections[i].removeAttribute("hidden");
+                    sectionsClassNames = sections[i].getAttribute("class");
+                    sectionsClassNames = sectionsClassNames.replace(" visually-hidden", "");
+                    //console.log(sectionsClassNames);
+                    sections[i].setAttribute("class", sectionsClassNames);
+                    //sectionsClassNames = "";
                 //}
             }
         });
