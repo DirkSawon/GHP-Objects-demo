@@ -68,7 +68,7 @@ Object.entries(dataObj).forEach((entryCards) => {
     
 });
 
-let sectionsClassNames = "";
+//let sectionsClassNames = "";
 let cardsClassNames = "";
 let cards = document.getElementsByClassName("m-3");
 
@@ -90,7 +90,7 @@ for (let i = 0; i < sections.length; i++) {
 
 for(let i = 0; i < headings.length; i++) {
     headings[i].addEventListener('click', () => {
-        let toggle = false;        
+        //let toggle = false;        
             //console.log(cards[i].getAttribute("class"));
             if(cards[i].getAttribute("class").includes("visually-hidden") === false) {
                 //if (sections[i].getAttribute("class").includes("visually-hidden") === false) {
