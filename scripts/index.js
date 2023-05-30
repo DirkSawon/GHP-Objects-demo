@@ -35,48 +35,7 @@ for (let i = 0; i < headings.length; i++) {
     //headings[i].style.marginRight = "100px";
 }
 
-let sectionsClassNames = "";
 
-for (let i = 0; i < sections.length; i++) {
-    //sections[i].style.display = "none";
-    sectionsClassNames = sections[i].getAttribute("class");
-    sectionsClassNames += " visually-hidden";
-    //console.log(sectionsClassNames);
-    sections[i].setAttribute("class", sectionsClassNames);
-}
-
-for(let i = 0; i < headings.length; i++) {
-    headings[i].addEventListener('click', () => {
-        let toggle = false;        
-                
-            if (sections[i].getAttribute("class").includes("visually-hidden") === false) {
-            //if (sections[i].style.display === "none") {
-                //sections[i].style.display = "flex";
-                //for(let j = 0; j < sections.length; j++) {    
-                    //sections[i].setAttribute("hidden", "");
-                    sectionsClassNames = sections[i].getAttribute("class");
-                    sectionsClassNames += " visually-hidden";
-                    //console.log(sectionsClassNames);
-                    sections[i].setAttribute("class", sectionsClassNames);
-                    //sectionsClassNames = "";
-
-                //}
-            }
-
-            else if (sections[i].getAttribute("class").includes("visually-hidden") === true) {
-            //else if (sections[i].style.display === "flex") {
-                //sections[i].style.display = "none";
-                //for(let j = 0; j < sections.length; j++) {
-                    //sections[i].removeAttribute("hidden");
-                    sectionsClassNames = sections[i].getAttribute("class");
-                    sectionsClassNames = sectionsClassNames.replace(" visually-hidden", "");
-                    //console.log(sectionsClassNames);
-                    sections[i].setAttribute("class", sectionsClassNames);
-                    //sectionsClassNames = "";
-                //}
-            }
-        });
-}
     
             
 
@@ -108,6 +67,68 @@ Object.entries(dataObj).forEach((entryCards) => {
     });
     
 });
+
+let sectionsClassNames = "";
+let cardsClassNames = "";
+let cards = document.getElementsByClassName("m-3");
+
+for (let i = 0; i < sections.length; i++) {
+    //sections[i].style.display = "none";
+    //sectionsClassNames = sections[i].getAttribute("class");
+    //sectionsClassNames += " visually-hidden";
+    cardsClassNames = cards[i].getAttribute("class");
+    cardsClassNames += " visually-hidden";
+    
+    //console.log(sectionsClassNames);
+    //sections[i].setAttribute("class", sectionsClassNames);
+    
+    cards[i].setAttribute("class", cardsClassNames);
+}
+
+
+console.log(cards);
+
+for(let i = 0; i < headings.length; i++) {
+    headings[i].addEventListener('click', () => {
+        let toggle = false;        
+            console.log(cards[i].getAttribute("class"));
+            if(cards[i].getAttribute("class").includes("visually-hidden") === false) {
+                //if (sections[i].getAttribute("class").includes("visually-hidden") === false) {
+                    cardsClassNames = cards[i].getAttribute("class");
+                    cardsClassNames += " visually-hidden";
+                    cards[i].setAttribute("class", cardsClassNames);
+                    //if (sections[i].style.display === "none") {
+                        //sections[i].style.display = "flex";
+                        //for(let j = 0; j < sections.length; j++) {    
+                            //sections[i].setAttribute("hidden", "");
+                            //sectionsClassNames = sections[i].getAttribute("class");
+                    //sectionsClassNames += " visually-hidden";
+                    //console.log(sectionsClassNames);
+                    //sections[i].setAttribute("class", sectionsClassNames);
+                    //sectionsClassNames = "";
+
+                //}
+            }
+
+            else if(cards[i].getAttribute("class").includes("visually-hidden") === true) {    
+            //else if (sections[i].getAttribute("class").includes("visually-hidden") === true) {
+            //else if (sections[i].style.display === "flex") {
+                cardsClassNames = cards[i].getAttribute("class");
+                cardsClassNames = cardsClassNames.replace(" visually-hidden", "");
+                cards[i].setAttribute("class", cardsClassNames);
+                //sections[i].style.display = "none";
+                //for(let j = 0; j < sections.length; j++) {
+                    //sections[i].removeAttribute("hidden");
+                    //sectionsClassNames = sections[i].getAttribute("class");
+                    //sectionsClassNames = sectionsClassNames.replace(" visually-hidden", "");
+                    //console.log(sectionsClassNames);
+                    //sections[i].setAttribute("class", sectionsClassNames);
+                    //sectionsClassNames = "";
+                //}
+            }
+        });
+}
+
 
 //toggleVis("hide");
 //toggleVis("show");
