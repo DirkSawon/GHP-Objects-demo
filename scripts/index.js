@@ -86,7 +86,7 @@ for (let i = 0; i < sections.length; i++) {
 }
 
 
-console.log(cards);
+//console.log(cards);
 
 for(let i = 0; i < headings.length; i++) {
     headings[i].addEventListener('click', () => {
